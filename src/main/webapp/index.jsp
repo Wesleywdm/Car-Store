@@ -1,5 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Carros Cadastrados</title>
+</head>
 <body>
-<h2>Hello World!</h2>
+    <h1>Dashboard de Carros</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car : ${cars}">
+                <td th:text="${car.name}"></td>
+                <td th:text="${car.color}"></td>
+                <td><!-- Ações futuras: editar/remover --></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
